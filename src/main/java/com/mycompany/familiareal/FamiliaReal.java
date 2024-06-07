@@ -20,26 +20,22 @@ public class FamiliaReal {
                 
         
         
-        ArbolGenealogico lopez =new ArbolGenealogico();
+        ArbolGenealogico windsor =new ArbolGenealogico();
         
-        lopez.insertar(m1);
-        lopez.insertar(m2);
-        lopez.insertar(m3);
-        lopez.insertar(m4);
-        lopez.insertar(m5);
-        lopez.insertar(m6);
-        lopez.insertar(m7);
-        lopez.insertar(m8);
-        lopez.insertar(m9);
-        lopez.insertar(m10);
-        lopez.insertar(m11);
+        windsor.insertar(m1);
+        windsor.insertar(m2);
+        windsor.insertar(m3);
+        windsor.insertar(m4);
+        windsor.insertar(m5);
+        windsor.insertar(m6);
+        windsor.insertar(m7);
+        windsor.insertar(m8);
+        windsor.insertar(m9);
+        windsor.insertar(m10);
+        windsor.insertar(m11);
         
-//        System.out.println(lopez.raiz.getNombre());
-//        System.out.println(lopez.raiz.der.getNombre());
-//        System.out.println(lopez.raiz.izq.getNombre());
-//        System.out.println(lopez.raiz.izq.der.der.der.getNombre());
         
-        ancestro=lopez.buscarAntecesor(m10);
+        ancestro=windsor.buscarAntecesor(m10);
         
         System.out.println(ancestro.getNombre());
     }
