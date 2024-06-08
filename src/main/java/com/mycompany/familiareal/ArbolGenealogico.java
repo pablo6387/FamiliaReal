@@ -1,7 +1,6 @@
 package com.mycompany.familiareal;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
 
 public class ArbolGenealogico {
     Miembro raiz;
@@ -11,17 +10,28 @@ public class ArbolGenealogico {
     }
     
     public Miembro insertarRec(Miembro actual, Miembro miembro) {
- if (actual == null) {
-            actual = miembro; // Insertar en el lugar correcto
+        if (actual==null){
+            actual=miembro;
             return actual;
-        } else if (miembro.getNacimiento().isBefore(actual.getNacimiento())) {
-            actual.izq = insertarRec(actual.izq, miembro); // Insertar en el subárbol izquierdo
-        } else {
-            actual.der = insertarRec(actual.der, miembro); // Insertar en el subárbol derecho
+        }else if (actual.getHijos()==2){
+            if (actual.der==null){
+                actual.der=insertarRec(actual.der,miembro);
+            }else if(actual.izq==null){
+                actual.izq=insertarRec(actual.izq,miembro);
+            }else if(actual.der!=null&&actual.izq!=null){
+                if(actual.der.getHijos()==0){
+                    actual.izq=insertarRec(actual.izq,miembro);
+                }else{
+                    actual.der=insertarRec(actual.der,miembro);
+                }
+            }
+        }else if (actual.getHijos()==1){
+            actual.der=insertarRec(actual.der,miembro);
         }
+        
+        
         return actual;
     }
-
     
     public void insertar(Miembro miembro) {
         raiz = insertarRec(raiz, miembro);
@@ -31,50 +41,40 @@ public class ArbolGenealogico {
 
    
     
-        public Miembro buscarAntecesor(Miembro miembro) {
-    List<Miembro> camino = new ArrayList<>(); // Lista para guardar el camino recorrido
-    Miembro antecesor = buscarAntecesorRec(raiz, miembro, null, camino);
-    System.out.println("Camino recorrido:");
-    for (int i = 0; i < camino.size(); i++) {
-        Miembro m = camino.get(i);
-        System.out.println(
-            (i > 0 ? "  |\n  V\n" : "") + 
-            "Nombre: " + m.getNombre() + 
-            ", Fecha de nacimiento: " + m.getNacimiento() + 
-            (m.getConyuge().isEmpty() ? "" : ", Cónyuge: " + m.getConyuge()) + 
-            " (Antecesor)"
-        );
-    }
-    // Mostrar el miembro seleccionado al final
-    System.out.println("  |\n  V\n" + 
-        "Nombre: " + miembro.getNombre() + 
-        ", Fecha de nacimiento: " + miembro.getNacimiento() + 
-        (miembro.getConyuge().isEmpty() ? "" : ", Cónyuge: " + miembro.getConyuge()) + 
-        " (Seleccionado)"
-    );
-    return antecesor;
-}
-         private Miembro buscarAntecesorRec(Miembro actual, Miembro miembro, Miembro antecesor, List<Miembro> camino) {
-    if (actual == null) {
-        return antecesor;
-    }
-    
-    // No agregar el nodo actual si es el miembro buscado
-    if (!actual.getNombre().equals(miembro.getNombre())) {
-        camino.add(actual); // Agregar el nodo actual al camino si no es el miembro buscado
-    }
-
-    if (actual.getNacimiento().isBefore(miembro.getNacimiento())) {
-        if (antecesor == null || actual.getNacimiento().isAfter(antecesor.getNacimiento())) {
-            antecesor = actual;
+    public Miembro buscarAntecesor(Miembro miembro){        
+        Miembro root = raiz;
+        Miembro ante = new Miembro();
+        while (root!=null){
+            if(!(root.getNacimiento().equals(miembro.getNacimiento()))){
+                
+                if(root.getNacimiento().isBefore(miembro.getNacimiento())){
+                    if(root.getHijos()==0){
+                        root=ante.der;                      
+                        
+                    }else{
+                        System.out.println("Nombre: "+root.getNombre());
+                        System.out.println("Conyugue: "+root.getConyuge());
+                        System.out.println("Fecha de Nacimiento: " + root.getNacimiento());
+                        System.out.println("       |");
+                        System.out.println("       |");
+                        System.out.println("       V");
+                        ante = root;
+                        root=root.izq;
+                    }
+                }else{
+                    root=ante.der;
+                }
+                
+            }else{
+                break;
+            }
         }
-        return buscarAntecesorRec(actual.der, miembro, antecesor, camino); // Buscar en el subárbol derecho
-    } else if (actual.getNacimiento().isAfter(miembro.getNacimiento())) {
-        return buscarAntecesorRec(actual.izq, miembro, antecesor, camino); // Buscar en el subárbol izquierdo
-    } else {
-        // Si la fecha de nacimiento es la misma, el nodo actual es el ancestro más cercano
-        return antecesor;
+        if (root==null){
+            return null;
+        }else{
+        return ante;}    
     }
-}
-    
+        
+        
+
 }
