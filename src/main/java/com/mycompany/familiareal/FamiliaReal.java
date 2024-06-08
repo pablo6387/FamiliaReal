@@ -74,33 +74,63 @@ public class FamiliaReal {
                                 break;
                             case 2:
                                 windsor.buscarAntecesor(edwardVIII);
+                                System.out.println("Nombre: "+edwardVIII.getNombre());
+                                System.out.println("Fecha de Nacimiento: " + edwardVIII.getNacimiento());
+                                System.out.println("Conyugue: "+edwardVIII.getConyuge()); 
                                 break;
                             case 3:
                                 windsor.buscarAntecesor(georgeVI);
+                                System.out.println("Nombre: "+georgeVI.getNombre());
+                                System.out.println("Fecha de Nacimiento: " + georgeVI.getNacimiento());
+                                System.out.println("Conyugue: "+georgeVI.getConyuge());
                                 break;
                             case 4:
                                 windsor.buscarAntecesor(elizabethII);
+                                System.out.println("Nombre: "+elizabethII.getNombre());
+                                System.out.println("Fecha de Nacimiento: " + elizabethII.getNacimiento());
+                                System.out.println("Conyugue: "+elizabethII.getConyuge());
                                 break;
                             case 5:
                                 windsor.buscarAntecesor(princessMargaret);
+                                System.out.println("Nombre: "+princessMargaret.getNombre());
+                                System.out.println("Fecha de Nacimiento: " + princessMargaret.getNacimiento());
+                                System.out.println("Conyugue: "+princessMargaret.getConyuge());
                                 break;
                             case 6:
                                 windsor.buscarAntecesor(princeCharles);
+                                System.out.println("Nombre: "+princeCharles.getNombre());
+                                System.out.println("Fecha de Nacimiento: " + princeCharles.getNacimiento());
+                                System.out.println("Conyugue: "+princeCharles.getConyuge());
                                 break;
                             case 7:
                                 windsor.buscarAntecesor(princessAnne);
+                                System.out.println("Nombre: "+princessAnne.getNombre());
+                                System.out.println("Fecha de Nacimiento: " + princessAnne.getNacimiento());
+                                System.out.println("Conyugue: "+princessAnne.getConyuge());
                                 break;
                             case 8:
                                 windsor.buscarAntecesor(princeWilliam);
+                                System.out.println("Nombre: "+princeWilliam.getNombre());
+                                System.out.println("Fecha de Nacimiento: " + princeWilliam.getNacimiento());
+                                System.out.println("Conyugue: "+princeWilliam.getConyuge());
                                 break;
                             case 9:
                                 windsor.buscarAntecesor(princeHenry);
+                                System.out.println("Nombre: "+princeHenry.getNombre());
+                                System.out.println("Fecha de Nacimiento: " + princeHenry.getNacimiento());
+                                System.out.println("Conyugue: "+princeHenry.getConyuge());
                                 break;
                             case 10:
                                 windsor.buscarAntecesor(princeGeorge);
+                                System.out.println("Nombre: "+princeGeorge.getNombre());
+                                System.out.println("Fecha de Nacimiento: " + princeGeorge.getNacimiento());
+                                System.out.println("Conyugue: "+princeGeorge.getConyuge());
                                 break;
                             case 11:
                                 windsor.buscarAntecesor(princessCharlotte);
+                                System.out.println("Nombre: "+princessCharlotte.getNombre());
+                                System.out.println("Fecha de Nacimiento: " + princessCharlotte.getNacimiento());
+                                System.out.println("Conyugue: "+princessCharlotte.getConyuge());
                                 break;
                                 
                             default:
@@ -113,7 +143,8 @@ public class FamiliaReal {
                        break; 
                 }
                 
-      
+                System.out.println("");
+                System.out.println("");
         }while(op!=3);
     }
 }

@@ -53,8 +53,8 @@ public class ArbolGenealogico {
                         
                     }else{
                         System.out.println("Nombre: "+root.getNombre());
-                        System.out.println("Conyugue: "+root.getConyuge());
                         System.out.println("Fecha de Nacimiento: " + root.getNacimiento());
+                        System.out.println("Conyugue: "+root.getConyuge());                        
                         System.out.println("       |");
                         System.out.println("       |");
                         System.out.println("       V");
