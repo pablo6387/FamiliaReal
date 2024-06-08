@@ -7,17 +7,17 @@ public class FamiliaReal {
 
     public static void main(String[] args) {
 
-        Miembro georgeV = new Miembro(LocalDate.of(1865,3,6), "George V","Mary of Teck",2);
-        Miembro edwardVIII = new Miembro(LocalDate.of(1894,2,18), "Edward VIII","",0);
-        Miembro georgeVI = new Miembro(LocalDate.of(1895,2,26), "George VI","Elizabeth Bowes-Lyon",2);
-        Miembro elizabethII = new Miembro(LocalDate.of(1926,7,18), "Elizabeth II","Philip Duke of Edinburgh",2);
-        Miembro princessMargaret = new Miembro(LocalDate.of(1930,7,18), "Princess Margaret","Antony Amstrong Jones",0);
-        Miembro princeCharles = new Miembro(LocalDate.of(1948,7,18), "Prince Charles","Princess Diana",2);
-        Miembro princessAnne = new Miembro(LocalDate.of(1950,7,18), "Princess Anne","Mark Phillips",0);        
-        Miembro princeWilliam = new Miembro(LocalDate.of(1982,7,18), "Prince William","Catherine",2);
-        Miembro princeHenry = new Miembro(LocalDate.of(1984,7,18), "Prince Henry","Meghan",0);
-        Miembro princeGeorge = new Miembro(LocalDate.of(2013,7,18), "Prince George","",0);
-        Miembro princessCharlotte = new Miembro(LocalDate.of(2015,7,18), "Princess Charlotte","",0);
+        Miembro georgeV = new Miembro(LocalDate.of(1865,6,3), "George V","Mary of Teck",2);
+        Miembro edwardVIII = new Miembro(LocalDate.of(1894,6,24), "Edward VIII","",0);
+        Miembro georgeVI = new Miembro(LocalDate.of(1895,12,14), "George VI","Elizabeth Bowes-Lyon",2);
+        Miembro elizabethII = new Miembro(LocalDate.of(1926,4,21), "Elizabeth II","Philip Duke of Edinburgh",2);
+        Miembro princessMargaret = new Miembro(LocalDate.of(1930,8,21), "Princess Margaret","Antony Amstrong Jones",0);
+        Miembro princeCharles = new Miembro(LocalDate.of(1948,11,14), "Prince Charles","Princess Diana",2);
+        Miembro princessAnne = new Miembro(LocalDate.of(1950,8,15), "Princess Anne","Mark Phillips",0);        
+        Miembro princeWilliam = new Miembro(LocalDate.of(1982,6,21), "Prince William","Catherine",2);
+        Miembro princeHenry = new Miembro(LocalDate.of(1984,9,15), "Prince Henry","Meghan",0);
+        Miembro princeGeorge = new Miembro(LocalDate.of(2013,7,22), "Prince George","",0);
+        Miembro princessCharlotte = new Miembro(LocalDate.of(2015,5,2), "Princess Charlotte","",0);
 
         int op;
         Scanner entry = new Scanner(System.in);
