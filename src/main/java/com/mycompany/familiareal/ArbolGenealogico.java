@@ -52,6 +52,12 @@ public class ArbolGenealogico {
                         root=ante.der;                      
                         
                     }else{
+                        System.out.println("Nombre: "+root.getNombre());
+                        System.out.println("Conyugue: "+root.getConyuge());
+                        System.out.println("Fecha de Nacimiento: " + root.getNacimiento());
+                        System.out.println("       |");
+                        System.out.println("       |");
+                        System.out.println("       V");
                         ante = root;
                         root=root.izq;
                     }
